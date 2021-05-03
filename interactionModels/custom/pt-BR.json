@@ -1,0 +1,49 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "testando guerra",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "sair"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "ajuda",
+            "socorro",
+            "não sei",
+            "preciso de ajuda"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "para"
+          ]
+        },
+        {
+          "name": "GetInfoIntent",
+          "slots": [],
+          "samples": [
+            "saber informações",
+            "informações",
+            "como está meu quarto",
+            "me atualize",
+            "pegar informações"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+            "início"
+          ]
+        }
+      ],
+      "types": []
+    }
+  },
+  "version": "6"
+}
