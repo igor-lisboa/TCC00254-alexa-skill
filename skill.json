@@ -1,5 +1,51 @@
 {
   "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "pt-BR": {
+          "summary": "Skill da Alexa feita para ouvir dados extraídos do ESP32",
+          "examplePhrases": [
+            "Alexa abra testando guerra",
+            "saber informações",
+            "ajuda"
+          ],
+          "keywords": [
+            "guerra",
+            "uff",
+            "trabalho",
+            "iot",
+            "esp32",
+            "temperatura",
+            "humidade",
+            "faculdade",
+            "universidade",
+            "federal",
+            "fluminense"
+          ],
+          "name": "iot guerra",
+          "description": "Feito para matéria TCC00254 - TÓPICOS ESPECIAIS EM SISTEMAS DE PROGRAMAÇÃO II - A1.\nUm ESP32 vai mandar dados extraídos para 1 endpoint de uma API e a Alexa vai consultar esse endpoint e falar os dados, como por exemplo, temperatura, humidade....",
+          "smallIconUri": "file://assets/images/pt-BR_smallIconUri.png",
+          "updatesDescription": "Se você falar \"saber informações\" ela traz os dados do endpoint que armazenou as informações que o ESP32 publicou.",
+          "largeIconUri": "file://assets/images/pt-BR_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "sourceLocaleForLanguages": [
+          {
+            "sourceLocale": "pt-BR",
+            "language": "pt"
+          }
+        ],
+        "isActive": true
+      },
+      "isAvailableWorldwide": false,
+      "testingInstructions": "fale testando guerra para iniciar a skill depois fale saber informações para ouvir as informações armazenadas.",
+      "category": "SMART_HOME",
+      "distributionMode": "PUBLIC",
+      "distributionCountries": [
+        "BR"
+      ]
+    },
     "apis": {
       "custom": {
         "endpoint": {
@@ -7,14 +53,14 @@
         },
         "interfaces": [],
         "regions": {
-          "NA": {
-            "endpoint": {
-              "uri": "arn:aws:lambda:us-east-1:101309894382:function:da4b8281-b7cd-4f92-90a3-e3acf8182b2f:Release_0"
-            }
-          },
           "EU": {
             "endpoint": {
               "uri": "arn:aws:lambda:eu-west-1:101309894382:function:da4b8281-b7cd-4f92-90a3-e3acf8182b2f:Release_0"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:101309894382:function:da4b8281-b7cd-4f92-90a3-e3acf8182b2f:Release_0"
             }
           },
           "FE": {
@@ -26,24 +72,15 @@
       }
     },
     "manifestVersion": "1.0",
-    "publishingInformation": {
-      "category": "KNOWLEDGE_AND_TRIVIA",
-      "distributionCountries": [],
-      "isAvailableWorldwide": true,
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
       "locales": {
-        "pt-BR": {
-          "description": "Sample Full Description",
-          "examplePhrases": [
-            "Alexa abra olá mundo",
-            "olá",
-            "ajuda"
-          ],
-          "keywords": [],
-          "name": "iot",
-          "summary": "Sample Short Description"
-        }
+        "pt-BR": {}
       },
-      "testingInstructions": "Sample Testing Instructions."
+      "containsAds": false,
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
     }
   }
 }

@@ -11,14 +11,14 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     async handle(handlerInput) {
-        let saudacao="";
+        let saudacao = "";
         try {
             const { data } = await axios.get(`https://iot-guerra-alexa-trab-final.herokuapp.com/saudacao`);
-            saudacao=data.data.saudacao;
+            saudacao = data.data.saudacao;
         } catch (err) {
             console.log(err);
         }
-        const speakOutput = saudacao+ 'Tudo bem? Fale saber informações!';
+        const speakOutput = saudacao + 'Tudo bem? Fale saber informações!';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -33,18 +33,18 @@ const GetInfoIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'GetInfoIntent';
     },
     async handle(handlerInput) {
-        let speakOutput = "Não foi possível recuperar as informações do endpoint da API";
-         try {
-             const { data } = await axios.get(`https://iot-guerra-alexa-trab-final.herokuapp.com/info`);
-             speakOutput="";
-            data.data.itens.forEach((info,index)=>{
-            speakOutput+=info.textToAlexa.replace("${value}",info.value);
-        });
-        speakOutput+= `Essas informações foram tiradas da última leitura que foi feita em ${data.data.atualizadoEm}`;
+        let speakOutput = "Não foi possível recuperar as informações do endpoint da API, possivelmente o heroku está levantando o servidor, espere 5 segundos e tente novamente...";
+        try {
+            const { data } = await axios.get(`https://iot-guerra-alexa-trab-final.herokuapp.com/info`);
+            speakOutput = "";
+            data.data.itens.forEach((info) => {
+                speakOutput += info;
+            });
+            speakOutput += `Essas informações foram tiradas da última leitura que foi feita em ${data.data.atualizadoEm}`;
         } catch (err) {
             console.log(err);
         }
-        
+
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
