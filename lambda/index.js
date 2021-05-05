@@ -48,7 +48,6 @@ const GetInfoIntentHandler = {
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt('Para pedir dados atualizados novamente só falar saber informações novamente...')
             .getResponse();
     }
 };
@@ -145,7 +144,7 @@ const ErrorHandler = {
         return true;
     },
     handle(handlerInput, error) {
-        const speakOutput = 'Opa, estamos com um probleminha para tratar o que você solicitou!';
+        const speakOutput = 'Opa, estamos com um probleminha para tratar o que você solicitou! possivelmente é a API no heroku que ainda não se inicializou, espere 5 segundos e tente novamente!';
         console.log(`~~~~ Error handled: ${JSON.stringify(error)}`);
 
         return handlerInput.responseBuilder
