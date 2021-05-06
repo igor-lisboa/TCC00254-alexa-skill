@@ -18,7 +18,7 @@ const LaunchRequestHandler = {
         } catch (err) {
             console.log(err);
         }
-        const speakOutput = saudacao + 'Tudo bem? Fale saber informações!';
+        const speakOutput = saudacao + 'Tudo bem? Essa skill foi desenvolvida para o trabalho da faculdade da matéria de Internet das Coisas do professor Guerra. A skill lê as informações de um ESP 32 que foram armazenadas em um uma aplicação Node e está hospedada no heroku. Para ouvir as informações armazenadas previamente, fale saber informações!';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -58,7 +58,7 @@ const HelpIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.HelpIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'Fale saber informações!';
+        const speakOutput = 'Fale saber informações para escutar as informações atualizadas! Fale fechar para fechar a skill! Fale desistir para parar a skill! Fale início para voltar para saudação inicial! Fale me ajuda para escutar todas as opções novamente...';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
